@@ -1,0 +1,1104 @@
+
+/* VARIABLES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+:root {
+    --color-madera-oscura:  #381E1A;
+    --color-madera-clara:   #84473d;
+    --color-arena:          #F9F1EA;
+    --color-tulipan:        #DA7D92;
+
+    --tipografia-textos:    'Host Grotesk', sans-serif;
+    --tipografia-titulos:   'Libre Baskerville', serif;
+}
+
+
+/* RESET >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--tipografia-textos);
+    font-size: 16px;
+}
+
+body {
+    background:
+        linear-gradient(90deg, #ffffff 1px, transparent 1px),
+        linear-gradient(0deg, #ffffff 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-color: var(--color-arena);
+}
+
+h1, h2, h3, h4, h5, h6 { 
+	font-family: var(--tipografia-titulos);
+}
+
+ul, li {
+	list-style: none; 
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-madera-oscura);
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* NAV >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 10.5rem;
+}
+
+.nav__title-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-tulipan);
+    border-radius: 1.5rem;
+    box-shadow: 0px 1px 2px 0px #381E1A30, 0px 2px 6px 2px #381E1A15;
+    transition: background-color 0.2s;
+}
+
+.nav__title-container:hover { 
+	background-color: var(--color-madera-oscura);
+}
+
+.nav__title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-arena);
+    padding: 0.6rem 1.8rem;
+}
+
+.menu__lista {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav__btn {
+    background-color: var(--color-tulipan);
+    color: var(--color-arena);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.6rem 1.8rem;
+    border-radius: 1.5rem;
+    box-shadow: 0px 1px 2px 0px #381E1A30, 0px 2px 6px 2px #381E1A15;
+    transition: background-color 0.2s;
+}
+
+.nav__btn:hover, .nav__btn--active { 
+	background-color: var(--color-madera-oscura); 
+}
+
+/* HERO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    margin: 4rem 10.5rem 0 10.5rem;
+    min-height: calc(100vh - 9rem);
+}
+
+.hero__columna-texto {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.hero__columna-imagen { flex: 0 0 auto; }
+
+.hero__titulo h1 {
+    font-size: 2.5rem;
+    color: var(--color-tulipan);
+    margin-bottom: 2rem;
+}
+
+.hero__subtitulo h2 {
+    font-size: 3.2rem;
+    color: var(--color-madera-oscura);
+    line-height: 4rem;
+    margin-top: 0rem;
+}
+
+.hero__texto {
+    font-size: 1.12rem;
+    line-height: 2rem;
+    margin-top: 2rem;
+    max-width: 37rem;
+}
+
+.hero__imagen { width: 27rem; }
+
+/* Variante index >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
+    margin: 4rem 10.5rem 0 10.5rem;
+    min-height: calc(100vh - 9rem); /* ← cámbialo por esto: */
+}
+
+.hero--index .hero__titulo h1 {
+    font-size: 4rem;
+    color: var(--color-madera-oscura);
+    line-height: 5rem;
+}
+
+.hero--index .hero__subtitulo h2 {
+    font-size: 3.4rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-tulipan);
+    line-height: 5rem;
+}
+
+/* Variante sobre mí >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.hero--sobre-mi .hero__imagen {
+	border-radius: 2rem; 
+}
+
+/* Variante proyectos >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+.hero--proyectos {
+    min-height: 20vh;
+    align-items: flex-start;
+    padding-top: 2rem;
+}
+
+.hero--proyectos .hero__titulo h1 {
+    font-size: 3.5rem;
+    color: var(--color-madera-oscura);
+    margin-bottom: 0.3rem;
+}
+
+.hero--proyectos .hero__subtitulo h2 {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-tulipan);
+    line-height: 2.5rem;
+    margin-top: 0.2rem;
+}
+
+/* GALERIA >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.galeria {
+    margin-top: 5rem;
+    margin-left: 10.5rem;
+    margin-right: 10.5rem;
+}
+
+.galeria__mosaico {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.galeria__fila {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.galeria__imagen-contenedor {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    flex: 1;
+}
+
+.galeria__imagen-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: scale 400ms;
+}
+
+.galeria__imagen-contenedor:hover img {
+	scale: 105%; 
+}
+
+.galeria__fila--2col .galeria__imagen-contenedor img { 
+	aspect-ratio: 4 / 3; 
+}
+.galeria__fila--3col .galeria__imagen-contenedor img { 
+	aspect-ratio: 2.5 / 3; 
+}
+
+.galeria__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.galeria__button button {
+    border-radius: 1.5rem;
+    border: none;
+    padding: 0.6rem 2.5rem;
+    background-color: var(--color-arena);
+    box-shadow: 0px 1px 2px 0px #381E1A30, 0px 2px 6px 2px #381E1A15;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.galeria__button button:hover { 
+	background-color: var(--color-madera-oscura);
+}
+
+.galeria__button button a {
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    color: var(--color-madera-oscura);
+}
+
+.galeria__button button:hover a {
+	color: var(--color-arena); 
+}
+
+/* MIS PROYECTOS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.proyectos {
+    margin: 0 10.5rem 8rem 10.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.proyectos__fila {
+    display: flex;
+    gap: 6rem;
+}
+
+.proyectos__fila .proyectos__item { flex: 1; }
+
+.proyectos__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    color: var(--color-madera-oscura);
+    transition: transform 0.3s;
+}
+
+.proyectos__item:hover {
+	transform: translateY(-4px);
+}
+
+.proyectos__info h3 {
+    font-size: 1.9rem;
+    color: var(--color-madera-oscura);
+}
+
+.proyectos__info p {
+    font-size: 1.4rem;
+    font-family: var(--tipografia-titulos);
+    font-style: italic;
+    color: var(--color-tulipan);
+    margin-top: 0.6rem;
+}
+
+.proyectos__imagen-contenedor {
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0px 1px 2px 0px #1e1e1e30, 0px 2px 6px 2px #1e1e1e15;
+}
+
+.proyectos__imagen-contenedor img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    transition: scale 400ms;
+}
+
+.proyectos__item:hover .proyectos__imagen-contenedor img { 
+	scale: 103%;
+}
+
+.proyectos__imagen--cuadrado img  { 
+	aspect-ratio: 1 / 1;
+}
+
+.proyectos__imagen--vertical img  { 
+	aspect-ratio: 3 / 4;
+}
+
+/* EDUCACION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.educacion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.educacion__imagen {
+	width: 20rem;
+}
+
+.educacion__contenedor-texto { 
+	width: 25rem;
+}
+
+.educacion__contenedor-texto h3 {
+    font-size: 2rem;
+    color: var(--color-tulipan);
+}
+
+.educacion__lista {
+	margin-top: 1rem;
+}
+
+.educacion__lista-item {
+    padding: 0.5rem 0;
+    line-height: 2rem;
+}
+
+.educacion__contenedor-texto b {
+    color: var(--color-madera-oscura);
+    font-weight: 700;
+}
+
+.educacion button {
+    border-radius: 1.5rem;
+    border: none;
+    width: 23rem;
+    padding: 0.6rem;
+    margin-top: 1rem;
+    background-color: var(--color-arena);
+    box-shadow: 0px 1px 2px 0px #381E1A30, 0px 2px 6px 2px #381E1A15;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.educacion button:hover {
+	background-color: var(--color-madera-oscura);
+}
+
+.educacion button a {
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    color: var(--color-madera-oscura);
+}
+
+.educacion button:hover a {
+	color: var(--color-arena);
+}
+
+/* CV / SKILLS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.cv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5rem;
+    gap: 3.5rem;
+    text-align: center;
+}
+
+.cv__bloque {
+	width: 23vw;
+}
+
+.cv h3 {
+    font-size: 2rem;
+    color: var(--color-tulipan);
+    margin-bottom: 1rem;
+}
+
+.cv__habilidades-lista {
+	margin-top: 0.5rem;
+}
+
+.cv li {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+}
+
+
+/* DESCRIPCIÓN PROYECTO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.proyecto__descripcion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 3rem 10.5rem 5rem 10.5rem;
+}
+
+.proyecto__descripcion-texto {
+    flex: 1;
+    min-width: 20rem;
+    max-width: 36rem;
+}
+
+.proyecto__titulo {
+    font-size: 2rem;
+    color: var(--color-tulipan);
+    margin-bottom: 2rem;
+}
+
+.proyecto__descripcion-texto p {
+    font-size: 1.05rem;
+    line-height: 1.9rem;
+    color: var(--color-madera-oscura);
+    margin-bottom: 1rem;
+}
+
+.proyecto__meta {
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.proyecto__meta-item b {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: var(--color-madera-clara);
+    margin-bottom: 0.3rem;
+}
+
+.proyecto__meta-item p {
+    font-size: 1rem;
+    color: var(--color-madera-oscura);
+}
+
+.proyecto__descripcion-imagen {
+    margin-top: 1rem;
+}
+
+.proyecto__descripcion-imagen img {
+    width: 34rem;
+    border-radius: 1.5rem;
+    box-shadow: 0px 1px 2px 0px #1e1e1e30, 0px 2px 6px 2px #1e1e1e15;
+}
+
+.ebonwick .proyecto__descripcion-imagen img {
+	width: 20rem;
+}
+
+/* OBJETIVOS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.proyecto__objetivos {
+    margin: 0 10.5rem 5rem 10.5rem;
+}
+
+.proyecto__objetivos-lista {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.proyecto__objetivo-item {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0px 1px 2px 0px #1e1e1e30, 0px 2px 6px 2px #1e1e1e15;
+}
+
+.proyecto__objetivo-item b {
+    display: block;
+    font-size: 2rem;
+    color: var(--color-tulipan);
+    opacity: 0.4;
+    margin-bottom: 0.8rem;
+    font-family: var(--tipografia-titulos);
+}
+
+.proyecto__objetivo-item p {
+    font-size: 1rem;
+    line-height: 1.8rem;
+}
+
+/* PANTALLAS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.proyecto__pantallas {
+    margin: 0 10.5rem 5rem 10.5rem;
+}
+
+.proyecto__pantallas-fila {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.proyecto__pantalla-item {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 2rem;
+    box-shadow: 0px 1px 2px 0px #1e1e1e30, 0px 2px 6px 2px #1e1e1e15;
+}
+
+.proyecto__pantalla-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* PROTOTIPO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.proyecto__prototipo {
+    margin: 0 10.5rem 8rem 10.5rem;
+	text-align: center;
+}
+
+.proyecto__iframe-contenedor iframe {
+    width: 50%;
+    height: 50rem;
+    border: none;
+    border-radius: 1.5rem;
+    box-shadow: 0px 1px 2px 0px #1e1e1e30, 0px 2px 6px 2px #1e1e1e15;
+}
+
+/* IDENTIDAD VISUAL >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.proyecto__identidad {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+	justify-content: center;
+    gap: 5rem;
+    margin: 0 10.5rem 5rem 10.5rem;
+}
+
+.proyecto__identidad--centrada {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.proyecto__identidad-texto {
+    flex: 1;
+    min-width: 20rem;
+    max-width: 36rem;
+}
+
+.proyecto__identidad-texto p {
+    font-size: 1.05rem;
+    line-height: 1.9rem;
+    color: var(--color-madera-oscura);
+    margin-bottom: 1rem;
+}
+
+.proyecto__identidad-imagen img {
+    width: 20rem;
+}
+
+/* SISTEMA DE DISEÑO >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.proyecto__sistema {
+    margin: 0 10.5rem 5rem 10.5rem;
+}
+
+/* Paleta y sistema visual >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.proyecto__sistema-fila1 {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.proyecto__sistema-color {
+    width: 9rem;
+    height: 9rem;
+    flex-shrink: 0;
+    border-radius: 1rem;
+    box-shadow: 0px 1px 2px 0px #1e1e1e30, 0px 2px 6px 2px #1e1e1e15;
+}
+
+.proyecto__sistema-tipo {
+    flex: 1;
+    height: 9rem;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0px 1px 2px 0px #1e1e1e30, 0px 2px 6px 2px #1e1e1e15;
+    background-color: white;
+}
+
+.proyecto__sistema-tipo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Tipografia >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.proyecto__sistema-fila2 {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.proyecto__sistema-extra {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0px 1px 2px 0px #1e1e1e30, 0px 2px 6px 2px #1e1e1e15;
+    aspect-ratio: 16 / 6;
+    background-color: white;
+}
+
+.proyecto__sistema-extra img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* CAMPAÑA, SEÑALETICA Y MERCH >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+.proyecto__galeria-piezas {
+    margin: 0 10.5rem 5rem 10.5rem;
+}
+
+.proyecto__galeria-fila {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.proyecto__galeria-item {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0px 1px 2px 0px #1e1e1e30, 0px 2px 6px 2px #1e1e1e15;
+}
+
+.proyecto__galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.proyecto__galeria-fila--merch {
+    height: 20rem;
+}
+
+.proyecto__galeria-item--auto {
+    flex: 0 0 auto;
+}
+
+.proyecto__galeria-item--auto img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+}
+
+.proyecto__accesibilidad-imagen img {
+    width: 33rem;
+    border-radius: 1.5rem;
+    box-shadow: 0px 1px 2px 0px #1e1e1e30, 0px 2px 6px 2px #1e1e1e15;
+}
+
+
+/* FOOTER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+footer {
+    margin-top: 12rem;
+    margin-bottom: 5rem;
+}
+
+.footer__container-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    background-color: var(--color-tulipan);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+    color: var(--color-arena);
+    box-shadow: 0px 1px 2px 0px #381E1A30, 0px 2px 6px 2px #381E1A15;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+footer a:hover {
+    background-color: var(--color-madera-oscura);
+    color: var(--color-arena);
+}
+
+/* RESPONSIVE — TABLET  (768px – 1210px) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+@media screen and (min-width: 768px) and (max-width: 1210px) {
+ 
+    .nav {
+		padding: 1.5rem 3rem;
+	}
+ 
+    .hero {
+        margin: 8rem 4rem 0 4rem;
+        gap: 2.5rem;
+    }
+ 
+    .hero__titulo h1 {
+		font-size: 1.6rem;
+	}
+ 
+    .hero__subtitulo h2 {
+        font-size: 2.6rem;
+        line-height: 3.4rem;
+    }
+ 
+    .hero__texto {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+ 
+    .hero__imagen {
+		width: 22rem;
+	}
+	
+	.hero.hero--index {
+    min-height: unset;
+    padding-bottom: 3rem;
+	}
+	
+	.hero--index .hero__titulo h1 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+	}
+
+	.hero--index .hero__subtitulo h2 {
+		font-size: 1.6rem;
+		line-height: 2.4rem;
+	}
+ 
+    .galeria {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+ 
+    .proyectos {
+        margin: 0 4rem 5rem 4rem;
+        gap: 3rem;
+    }
+ 
+    .proyectos__fila {
+		gap: 2rem;
+	}
+ 
+    .educacion {
+        gap: 2rem;
+        margin-top: 3.5rem;
+    }
+ 
+    .educacion__imagen {
+		width: 40vw;
+	}
+	
+    .educacion__contenedor-texto {
+		width: 45vw;
+	}
+ 
+    .cv {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+ 
+    .cv__bloque {
+		width: 60vw;
+	}
+ 
+    footer {
+		margin-top: 6rem;
+	}
+	
+	.proyecto__titulo {
+		font-size: 1.6rem;
+	}
+
+    .proyecto__descripcion,
+    .proyecto__objetivos,
+    .proyecto__pantallas,
+    .proyecto__prototipo,
+    .proyecto__identidad,
+    .proyecto__sistema,
+    .proyecto__galeria-piezas {
+		margin-left: 4rem;
+		margin-right: 4rem;
+	}
+ 
+    .proyecto__descripcion-imagen img {
+		width: 100%;
+	}
+	
+    .proyecto__iframe-contenedor iframe {
+		height: 40rem;
+	}
+	
+    .proyecto__objetivos-lista {
+		grid-template-columns: 1fr;
+	}
+	
+	.proyecto__identidad-imagen img {
+		width: 22rem;
+	}
+}
+ 
+/* RESPONSIVE — MOBILE  (hasta 767px) >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+ 
+@media screen and (max-width: 767px) {
+ 
+    .nav {
+		padding: 1rem 2rem;
+	}
+ 
+    .nav__title { 
+	font-size: 0.78rem;
+	}
+ 
+    .nav__btn {
+        font-size: 0.78rem;
+        padding: 0.5rem 1rem;
+    }
+ 
+    .hero {
+        flex-direction: column;
+        margin: 7rem 2rem 0 2rem;
+        text-align: center;
+        align-items: center;
+        gap: 2rem;
+        min-height: unset;
+    }
+ 
+    .hero__titulo h1 { font-size: 1.4rem; }
+ 
+    .hero__subtitulo h2 {
+        font-size: 2rem;
+        line-height: 2.8rem;
+        margin-top: 0.5rem;
+    }
+ 
+    .hero__texto {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+ 
+    .hero__columna-imagen {
+		order: -1;
+	}
+	
+    .hero__imagen {
+		width: 55vw;
+	}
+	
+	.hero--proyectos .hero__titulo h1 {
+    font-size: 2rem;
+	}
+
+	.hero--proyectos .hero__subtitulo h2 {
+		font-size: 1.4rem;
+	}
+	
+	.hero--index {
+    min-height: unset;
+    padding-bottom: 3rem;
+	}
+ 
+    .galeria {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+ 
+    .galeria__fila--3col,
+    .galeria__fila--2col {
+		flex-direction: column; 
+	}
+ 
+    .proyectos {
+		margin: 0 2rem 5rem 2rem;
+	}
+ 
+    .proyectos__fila {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+    }
+ 
+    .proyectos__fila .proyectos__item {
+        width: 85%;
+        text-align: center;
+    }
+ 
+    .educacion {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+ 
+    .educacion__imagen { width: 55vw; }
+    .educacion__contenedor-texto { width: 85vw; }
+    .educacion button { width: 60vw; }
+ 
+    .cv {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+ 
+    .cv__bloque { width: 85vw; }
+ 
+    footer {
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+    }
+ 
+    .footer__container-links { gap: 1rem; }
+ 
+	.proyecto__titulo {
+		font-size: 1.5rem;
+	}
+	.proyectos__info h3 {
+		font-size: 1.2rem;
+	}
+	.proyectos__info p {
+		font-size: 1rem;
+	}
+    .proyecto__descripcion,
+    .proyecto__objetivos,
+    .proyecto__pantallas,
+    .proyecto__prototipo,
+    .proyecto__identidad,
+    .proyecto__sistema,
+    .proyecto__galeria-piezas {
+		margin-left: 2rem;
+		margin-right: 2rem;
+	}
+ 
+    .proyecto__descripcion,
+    .proyecto__identidad {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+ 
+    .proyecto__descripcion-imagen img,
+    .proyecto__identidad-imagen img {
+		width: 100%;
+	}
+	
+    .proyecto__meta {
+		justify-content: center;
+	}
+    .proyecto__objetivos-lista {
+		grid-template-columns: 1fr;
+	}
+ 
+    .proyecto__pantallas-fila {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+ 
+    .proyecto__pantalla-item {
+		flex: 0 0 calc(50% - 0.5rem);
+	}
+	
+    .proyecto__iframe-contenedor iframe {
+		height: 35rem;
+	}
+ 
+    .proyecto__sistema-fila1 {
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+ 
+    .proyecto__sistema-color {
+        width: 5rem;
+        height: 5rem;
+    }
+ 
+    .proyecto__sistema-tipo {
+        flex: 1 1 100%;
+        height: 6rem;
+    }
+ 
+    .proyecto__sistema-fila2 {
+		flex-direction: column;
+	}
+ 
+    .proyecto__galeria-fila {
+		flex-wrap: wrap;
+	}
+	
+    .proyecto__galeria-item {
+		flex: 0 0 calc(50% - 0.5rem);
+	}
+ 
+    .proyecto__galeria-fila--merch {
+        height: auto;
+        flex-direction: column;
+    }
+ 
+    .proyecto__galeria-item--auto {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+ 
+    .proyecto__galeria-item--auto img {
+        width: 100%;
+        height: auto;
+    }
+ 
+    .ebonwick .proyecto__descripcion-imagen img {
+		width: 100%;
+	}
+	
+	.proyecto__identidad-imagen img {
+		width: 12rem;
+	}
+}
+ 
